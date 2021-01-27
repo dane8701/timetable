@@ -25,6 +25,6 @@ FROM Cours C
     NATURAL JOIN ETUDIANT e
 WHERE T.jourCoursDate IN ('lundi','mardi','mercredi','jeudi','vendredi','samedi')
     AND e.MATRICULE = (SELECT MATRICULE FROM Etudiant WHERE MATRICULE ='&matricule')
-    AND e.password = (SELECT MATRICULE FROM Etudiant WHERE password = MD5('&password'))
+    AND e.password = (SELECT MATRICULE FROM Etudiant WHERE password = ('000'||' &password '||INSTR('&&', '0', 1, 4||' IUC'||)))
 
 SPOOL OFF

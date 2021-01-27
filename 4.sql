@@ -7,9 +7,8 @@ ALTER TABLE ETUDIANT
     ADD password VARCHAR(20) NULL;
 
 UPDATE ENSEIGNANTS
-    SET password = MD5(&password)
+    SET password = '000'||' &password '||INSTR('&&', '0', 1, 4||' IUC'||)
 WHERE CODEENS = &matricule;
-
 UPDATE ETUDIANT
-    SET password = MD5(&password)
+    SET password = '000'||' &password '||INSTR('&&', '0', 1, 4||' IUC'||)
 WHERE MATRICULE = &matricule;
